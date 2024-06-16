@@ -1,0 +1,133 @@
+.blog-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 240px;
+  cursor: pointer;
+  width: 400px;
+  @media(max-width:768px){
+    width: 340px;
+  }
+}
+
+.blog-card-content {
+  @extend .blog-card;
+  width: 340px;
+  height: auto;
+}
+
+.blog-card:hover {
+  transform: transform 0.3s ease-in;
+}
+
+.blog-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  opacity: 1;
+}
+
+.blog-image-content {
+  @extend .blog-image;
+  position: relative;
+  height: 240px;
+}
+
+.blog-details {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  padding: 20px;
+  max-width: 350px;
+
+  .blog-date {
+    font-size: 15px;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+
+  .blog-name {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+}
+
+.author-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.author-name {
+  font-weight: bold;
+}
+
+.blog-category {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+.blog-content {
+  .blog-date {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+
+  .blog-name {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: #4D4C7D;
+  }
+
+  a {
+    color: #4D4C7D;
+    margin-bottom: -8px;
+
+  }
+
+  hr {
+    color: #4D4C7D !important;
+    width: 148px;
+    height: 1px;
+    background-color: #4D4C7D !important;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}

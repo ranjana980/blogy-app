@@ -1,0 +1,35 @@
+.nav {
+    position: relative;
+    width: 100%;
+    background-color: aliceblue;
+    padding: 10px 0;
+    &-items {
+        &-container {
+            display: flex;
+            gap: 29px;
+            color: #214252;
+            list-style: none;
+            font-weight: 800;
+            .active {
+                text-decoration: underline;
+            }
+        }
+        .login-btn {
+            background: #214252;
+            padding: 6px;
+            width: 140px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: aliceblue;
+        }
+        display: flex;
+        justify-content: space-between;
+        .site-logo {
+            font-size: 24px;
+            color: #214252;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+    }
+}
