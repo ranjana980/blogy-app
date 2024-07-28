@@ -1,6 +1,13 @@
 .site-footer {
     background: #214252;
-    font-size: 14px;
-    padding: 70px 0;
+    font-size: 15px;
     color: white;
+}
+
+.footer-conatiner{
+    padding:20px 70px 0px 70px ;
+
+    @media(max-width:769px){
+        padding:0px 20px 0px 20px ;
+    }
 }

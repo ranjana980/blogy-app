@@ -1,7 +1,7 @@
-// BlogCard.js
 
 import React from "react";
 import "./styles.scss";
+import Image from "next/image";
 
 const BlogCard = ({
   author,
@@ -31,7 +31,7 @@ const BlogCard = ({
         {isPorfile && (
           <div className="blog-meta">
             <div className="meta-item">
-              <img
+              <Image
                 className="author-image"
                 src={authorImage}
                 alt={`${author}'s profile`}

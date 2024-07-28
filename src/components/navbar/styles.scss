@@ -3,27 +3,85 @@
     width: 100%;
     background-color: aliceblue;
     padding: 10px 0;
+    z-index: 999;
+
+    &-menu {
+        cursor: pointer;
+        display: none;
+
+        @media(max-width:769px) {
+            display: block;
+            font-size: 30px;
+        }
+    }
+
+    &-btn {
+        background: #214252;
+        padding: 6px;
+        width: 140px;
+        border-radius: 4px;
+        font-weight: 500;
+        color: aliceblue;
+
+        @media(max-width:769px) {
+            display: none;
+        }
+    }
+
     &-items {
+        padding: 0px 70px 0px 70px;
+
+        @media(max-width:769px) {
+            padding: 0px 20px 0px 20px;
+        }
+
         &-container {
             display: flex;
             gap: 29px;
             color: #214252;
             list-style: none;
-            font-weight: 800;
+            @media(max-width:769px) {
+                display: none;
+            }
+
             .active {
                 text-decoration: underline;
             }
         }
-        .login-btn {
-            background: #214252;
-            padding: 6px;
-            width: 140px;
-            border-radius: 4px;
-            font-weight: 500;
-            color: aliceblue;
+
+        &-mobile {
+            margin-top: 10px;
+            display: none;
+
+            @media(max-width:769px) {
+                display: flex;
+            }
+
+            flex-direction: column;
+            gap: 2px;
+
+            li {
+                background-color: #214252;
+                margin: 0px 10px 0px 10px;
+                text-align: center;
+                border-radius: 5px;
+                border: 2px solid white;
+                color: white;
+                padding: 5px;
+                font-weight: 600;
+            }
+
+            .active {
+                background-color: aliceblue;
+                border: 2px solid #214252;
+                color: #214252;
+                font-weight: 600;
+            }
         }
+
         display: flex;
         justify-content: space-between;
+
         .site-logo {
             font-size: 24px;
             color: #214252;
@@ -32,4 +90,18 @@
         }
 
     }
+}
+
+.profile {
+    background: #214252;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 13px;
+    color: white;
+    padding: 11px;
+    cursor: pointer;
 }
