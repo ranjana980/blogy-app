@@ -1,7 +1,9 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Footer from '../footer'
 
 export default function AboutUs() {
+    const [status,setStatus]=useState()
     return (
         <div>
             <div className="site-mobile-menu site-navbar-target">

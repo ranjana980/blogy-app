@@ -32,7 +32,7 @@
     padding-bottom: 64px;
 
     @media(max-width:426px) {
-        background-size: auto 87vh;
+        background-size: auto 300px;
         background-repeat: no-repeat;
     }
 
@@ -58,7 +58,7 @@
 
         @media(max-width:426px) {
             top: 63px;
-            left: 2px;
+            left: 24px;
 
             h1 {
                 font-size: 30px;
