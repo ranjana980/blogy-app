@@ -1,12 +1,22 @@
+// app/api/movies.js
 import { NextResponse } from 'next/server';
-import User from  '../../modals/post'
+import {connectToDatabase} from '../../lib/mongodb';
 
 export async function GET() {
   try {
-    const posts = await User.find();
-    console.log(posts,'posssss')
-    return NextResponse.json(posts);
+    var client = new MongoClient(url);
+var database = client.GetDatabase(url.DatabaseName);
+    const client = await connectToDatabase();
+    // const db = client.db("sample_mflix");
+    // const movies = await db
+    //   .collection("movies")
+    //   .find({})
+    //   .sort({ metacritic: -1 })
+    //   .limit(10)
+    //   .toArray();
+    return NextResponse.json({message:'hello'});
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch posts' }, { status: 500 });
+    console.error(error);
+    return NextResponse.error();
   }
 }
