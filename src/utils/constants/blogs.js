@@ -5,19 +5,29 @@ import image3 from './../../assets/images/hero_3.jpg'
 import image4 from './../../assets/images/hero_4.jpg'
 import image5 from './../../assets/images/hero_5.jpg'
 import image6 from './../../assets/images/hero_6.jpg'
+import image7 from './../../assets/images/creativity.jpg'
+import image8 from './../../assets/images/travel.jpg'
+import image9 from './../../assets/images/tech-blog.jpg'
+import image10 from "./../../assets/images/wordpress-923188_1280.jpg"
+import Person1 from './../../assets/images/person_1.jpg'
+import Person2 from './../../assets/images/person_2.jpg'
+import Person3 from './../../assets/images/person_3.jpg'
+import Person4 from './../../assets/images/person_4.jpg'
+import Person5 from './../../assets/images/person_5.jpg'
 
 export const blogs = [
   {
-    date: "2019-02-10",
+    id: 1,
+    date_published: "2019-02-10",
     author: "Carl Atkinson",
+    profile_image: Person1.src,
     category: "Technology",
-    name: "The Future of AI",
+    title: "The Future of AI",
     rating: 4.5,
     blogImage: image1.src,
     likes: 200,
-    profile_image: "",
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -46,16 +56,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-05",
+    id: 2,
+    date_published: "2022-01-05",
     author: "Jane Smith",
+    profile_image: Person2.src,
     category: "Lifestyle",
-    name: "Mindfulness in the Modern World",
+    title: "Mindfulness in the Modern World",
     rating: 4.2,
-    profile_image: "",
-    blogImage: image2.src,
+    blogImage: image10.src,
     likes: 150,
     comments: 30,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -84,16 +95,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-10",
+    id: 3,
+    date_published: "2022-01-10",
     author: "Bob Johnson",
+    profile_image: Person3.src,
     category: "Business",
-    name: "The Art of Entrepreneurship",
+    title: "The Art of Entrepreneurship",
     rating: 4.8,
-    profile_image: "",
     blogImage: image3.src,
     likes: 250,
     comments: 60,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -122,16 +134,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-12",
+    id: 4,
+    date_published: "2022-01-12",
     author: "Alice Brown",
+    profile_image: Person1.src,
     category: "Health",
-    name: "The Benefits of Meditation",
+    title: "The Benefits of Meditation",
     rating: 4.6,
-    profile_image: "",
+    blogImage: image10.src,
     likes: 180,
     comments: 40,
-    blogImage: image4.src,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -160,16 +173,18 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-15",
+    id: 5,
+    date_published: "2022-01-15",
     author: "Mike Davis",
+    profile_image: Person1.src,
     category: "Sports",
-    name: "The Psychology of Winning",
-    profile_image: "",
+    title: "The Psychology of Winning",
+    profile_image: Person1.src,
     rating: 4.4,
     likes: 120,
     blogImage: image5.src,
     comments: 20,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -198,16 +213,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-18",
+    id: 6,
+    date_published: "2022-01-18",
     author: "Emily Chen",
     category: "Travel",
-    profile_image: "",
+    profile_image: Person1.src,
     blogImage: image1.src,
-    name: "Exploring the World's Hidden Gems",
+    title: "Exploring the World's Hidden Gems",
     rating: 4.9,
     likes: 300,
     comments: 80,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -236,16 +252,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-20",
+    id: 7,
+    date_published: "2022-01-20",
     author: "David Lee",
     category: "Food",
-    name: "The Art of Cooking",
+    title: "The Art of Cooking",
     rating: 4.7,
-    profile_image: "",
+    profile_image: Person1.src,
     likes: 220,
     comments: 50,
     blogImage: image2.src,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -274,16 +291,16 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-22",
+    id: 8,
+    date_published: "2022-01-22",
     author: "Sarah Taylor",
     category: "Fashion",
-    name: "The Evolution of Style",
-    profile_image: "",
+    title: "The Evolution of Style",
+    profile_image: Person1.src,
     rating: 4.3,
-    blogImage: image3.src,
     likes: 140,
     comments: 30,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -312,16 +329,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-25",
+    id: 9,
+    date_published: "2022-01-25",
     author: "Kevin White",
     category: "Technology",
-    name: "The Future of Virtual Reality",
-    profile_image: "",
+    title: "The Future of Virtual Reality",
+    profile_image: Person4.src,
     blogImage: image4.src,
     rating: 4.6,
     likes: 200,
     comments: 40,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -350,16 +368,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-27",
+    id: 10,
+    date_published: "2022-01-27",
     author: "Lisa Nguyen",
     category: "Lifestyle",
-    name: "The Importance of Self-Care",
+    title: "The Importance of Self-Care",
     rating: 4.5,
-    profile_image: "",
+    profile_image: Person4.src,
     blogImage: image5.src,
     likes: 180,
     comments: 35,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -388,16 +407,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-29",
+    id: 11,
+    date_published: "2022-01-29",
     author: "Tom Harris",
     category: "Business",
-    name: "The Art of Leadership",
-    profile_image: "",
+    title: "The Art of Leadership",
+    profile_image: Person1.src,
     blogImage: image5.src,
     rating: 4.8,
     likes: 250,
     comments: 60,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -426,16 +446,16 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-02-01",
+    id: 12,
+    date_published: "2022-02-01",
     author: "Rachel Patel",
     category: "Health",
-    name: "The Benefits of Yoga",
-    blogImage: "",
-    profile_image: "",
+    title: "The Benefits of Yoga",
+    profile_image: image6?.src,
     rating: 4.7,
     likes: 220,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -464,16 +484,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-02-03",
+    id: 13,
+    date_published: "2022-02-03",
     author: "Chris Martin",
     category: "Sports",
-    name: "The Psychology of Teamwork",
-    profile_image: "",
+    title: "The Psychology of Teamwork",
+    profile_image: Person4.src,
     rating: 4.4,
-    blogImage: "",
+    blogImage: image7.blogImage,
     likes: 140,
     comments: 30,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -502,16 +523,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-02-05",
+    id: 14,
+    date_published: "2022-02-05",
     author: "Jessica Hall",
     category: "Travel",
-    profile_image: "",
-    name: "Exploring the World's Most Beautiful Cities",
+    profile_image: Person1.src,
+    title: "Exploring the World's Most Beautiful Cities",
     rating: 4.9,
-    blogImage: "",
+    blogImage: image7.blogImage,
     likes: 300,
     comments: 80,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -540,16 +562,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-02-08",
+    id: 15,
+    date_published: "2022-02-08",
     author: "Brian Kim",
     category: "Food",
-    name: "The Art of Baking",
-    profile_image: "",
-    blogImage: "",
+    title: "The Art of Baking",
+    profile_image: Person1.src,
+    blogImage: image8.blogImage,
     rating: 4.6,
     likes: 200,
     comments: 40,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -578,16 +601,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-02-08",
+    id: 16,
+    date_published: "2022-02-08",
     author: "Brian Kim",
     category: "Food",
-    name: "The Art of Baking",
-    profile_image: "",
-    blogImage: "",
+    title: "The Art of Baking",
+    profile_image: Person1.src,
+    blogImage: image9.src,
     rating: 4.6,
     likes: 200,
     comments: 40,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -616,16 +640,16 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 17,
+    date_published: "2022-01-01",
     author: "John Doe",
     category: "Technology",
-    name: "The Future of AI",
-    profile_image: "",
-    blogImage: "",
+    title: "The Future of AI",
+    profile_image: Person5.src,
     rating: 4.5,
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -654,16 +678,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 18,
+    date_published: "2022-01-01",
     author: "John Doe",
     category: "Technology",
-    name: "The Future of AI",
-    profile_image: "",
-    blogImage: "",
+    title: "The Future of AI",
+    blogImage: image10.src,
+    profile_image: Person5.src,
     rating: 4.5,
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -692,16 +717,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 19,
+    date_published: "2022-01-01",
     author: "John Doe",
     category: "Technology",
-    name: "The Future of AI",
+    profile_image: Person5.src,
+    title: "The Future of AI",
     rating: 4.5,
-    profile_image: "",
-    blogImage: "",
+    blogImage: image10.src,
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -730,16 +756,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 20,
+    date_published: "2022-01-01",
     author: "John Doe",
     category: "Technology",
-    name: "The Future of AI",
-    blogImage: "",
-    profile_image: "",
+    profile_image: Person5.src,
+    title: "The Future of AI",
+    blogImage: image10.src,
     rating: 4.5,
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -768,16 +795,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 21,
+    date_published: "2022-01-01",
     author: "John Doe",
+    profile_image: Person1.src,
     category: "Technology",
-    name: "The Future of AI",
-    profile_image: "",
+    title: "The Future of AI",
+    blogImage: image10.src,
     rating: 4.5,
     likes: 200,
     comments: 50,
-    blogImage: "",
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -806,16 +834,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 23,
+    date_published: "2022-01-01",
     author: "John Doe",
+    profile_image: Person1.src,
     category: "Technology",
-    name: "The Future of AI",
-    profile_image: "",
+    title: "The Future of AI",
+    blogImage: image10.src,
     rating: 4.5,
-    blogImage: "",
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -844,16 +873,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 24,
+    date_published: "2022-01-01",
     author: "John Doe",
     category: "Technology",
-    name: "The Future of AI",
-    profile_image: "",
+    profile_image: Person1.src,
+    title: "The Future of AI",
+    blogImage: image10.src,
     rating: 4.5,
-    blogImage: "",
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -882,16 +912,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 25,
+    date_published: "2022-01-01",
     author: "John Doe",
     category: "Technology",
-    name: "The Future of AI",
-    profile_image: "",
+    profile_image: Person1.src,
+    title: "The Future of AI",
+    blogImage: image10.src,
     rating: 4.5,
-    blogImage: "",
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 
@@ -920,16 +951,17 @@ export const blogs = [
     `,
   },
   {
-    date: "2022-01-01",
+    id: 26,
+    date_published: "2022-01-01",
     author: "John Doe",
     category: "Technology",
-    name: "The Future of AI",
-    profile_image: "",
-    blogImage: "",
+    profile_image: Person1.src,
+    title: "The Future of AI",
+    blogImage: image10.src,
     rating: 4.5,
     likes: 200,
     comments: 50,
-    description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
     Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque 
     labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt
     eveniet rerum repellendus porro.Sint ab voluptates itaque, ipsum porro qui obcaecati 

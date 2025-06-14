@@ -11,14 +11,14 @@ export default function Footer() {
     };
 
     const renderBlogEntries = () => {
-        return blogs.slice(0, 3).map(({ date, blogImage = "blogImage", name }) => (
-            <li key={name} >
+        return blogs.slice(0, 3).map(({ date_published, blogImage = "blogImage", title }) => (
+            <li key={title} >
                 <a href="#" className="flex align-items-center gap-4">
                     <img src={blogImage} alt="Blog Image" height={140} width={100} className="rounded" />
                     <div className="text">
-                        <h4>{name}</h4>
+                        <h4>{title}</h4>
                         <div className="post-meta">
-                            <span className="blog-date">{formatDate(date)}</span>
+                            <span className="blog-date">{formatDate(date_published)}</span>
                         </div>
                     </div>
                 </a>

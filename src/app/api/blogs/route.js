@@ -1,22 +1,13 @@
-// app/api/movies.js
 import { NextResponse } from 'next/server';
-import {connectToDatabase} from '../../lib/mongodb';
+import fs from 'fs';
+import path from 'path';
 
 export async function GET() {
   try {
-    var client = new MongoClient(url);
-var database = client.GetDatabase(url.DatabaseName);
-    const client = await connectToDatabase();
-    // const db = client.db("sample_mflix");
-    // const movies = await db
-    //   .collection("movies")
-    //   .find({})
-    //   .sort({ metacritic: -1 })
-    //   .limit(10)
-    //   .toArray();
-    return NextResponse.json({message:'hello'});
+    const filePath = path.join(process.cwd(), 'src/utils/constants', 'data.json'); // Path to your JSON file
+    const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return NextResponse.json({ message: "Data Found SuccessFully", data: jsonData });
   } catch (error) {
-    console.error(error);
     return NextResponse.error();
   }
 }

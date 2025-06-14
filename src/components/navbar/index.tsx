@@ -1,16 +1,16 @@
 
 
+'use client'
 import React, { useState } from 'react'
 import { navItems } from './../../utils/constants/navbar'
-import { usePathname, useRouter } from 'next/navigation';
 import './styles.scss'
 import { Menu, Close, EditOutlined } from '@mui/icons-material';
-import { Box } from '@mui/material';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
     const pathname = usePathname()
     const [openMenu, setOpenMenu] = useState(false)
-    const router = useRouter()
     const isLoggedIn = true
     const darkBgPath = ['/user/write-blog', '/user/dashboard']
     const isDark = darkBgPath.includes(pathname)
@@ -19,10 +19,8 @@ export default function Navbar() {
         setOpenMenu(!openMenu)
     }
 
-
-
     return (
-        <nav className="nav" style={{ background: isDark ? '#214252' : 'aliceblue' }}>
+        <nav className="nav fixed" style={{ background: isDark ? '#214252' : 'aliceblue' }}>
             <div className="nav-items" >
                 <a href="/" className="site-logo" style={{ color: isDark ? 'aliceblue' : '#214252' }}>Blogy<span className="text-primary">.</span></a>
                 <ul className="nav-items-container" style={{ color: isDark ? 'aliceblue' : '#214252', fontWeight: isDark ? '400' : '600' }}>
@@ -34,28 +32,23 @@ export default function Navbar() {
                 </ul>
                 <div className='flex gap-[10px]'>
                     {isLoggedIn ? <div className='flex gap-[12px] justify-content-center align-items-center'>
-                        <Box onClick={() => router.push('/user/write-blog')} sx={{
-                            border: '1px solid',
-                            padding: '5px',
-                            height: '25px',
-                            width: '25px',
-                            display: 'flex',
-                            cursor: 'pointer'
-                        }}><EditOutlined className='text-[15px]' />
-                        </Box>
+                        <Link href="/user/write-blog" className='border p-[5px] h-[25px] w-[25px] flex cursor-pointer' ><EditOutlined className='text-[15px]' />
+                        </Link>
                         <span>Write</span>
-                        <div className='profile' style={{ background: isDark ? 'aliceblue' : '#214252', color: isDark ? '#214252' : 'aliceblue' }} onClick={() => router.push('/user/dashboard')}>RC</div>
+                        <Link className='profile' style={{ background: isDark ? 'aliceblue' : '#214252', color: isDark ? '#214252' : 'aliceblue' }} href="/user/dashboard">RC</Link>
                     </div> : <button className='nav-btn'>Login</button>}
                     {!openMenu ? <Menu className='nav-menu' onClick={toggleMenu} /> : <Close className='nav-menu' onClick={toggleMenu} />}
                 </div>
             </div>
-            {openMenu && <ul className="nav-items-mobile">
-                {navItems.map(({ label, url }: any) => (
-                    <li key={label} className={pathname === url ? 'active' : ''}>
-                        <a href={url}>{label}</a>
-                    </li>
-                ))}
-            </ul>}
-        </nav>
+            {
+                openMenu && <ul className="nav-items-mobile">
+                    {navItems.map(({ label, url }: any) => (
+                        <li key={label} className={pathname === url ? 'active' : ''}>
+                            <a href={url}>{label}</a>
+                        </li>
+                    ))}
+                </ul>
+            }
+        </nav >
     )
 }

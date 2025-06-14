@@ -10,8 +10,8 @@ import '../app/globals.css'
 import '../app/globals.scss'
 
 // components 
-// import Navbar from '@/components/navbar';
-// import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 // Meta data for site
 export const metadata: Metadata = {
@@ -36,13 +36,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
       <link rel="preload" href="/src/assets/fonts/static/WorkSans-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
       <title>Generated for Blogs</title>
     </Head>
-    
+
     <body className={WorkSans.className}>
-      {/* <Navbar /> */}
+      <Navbar />
       <div >
         {children}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </body>
   </html>
 

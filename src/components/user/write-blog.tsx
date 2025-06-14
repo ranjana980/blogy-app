@@ -2,29 +2,57 @@
 
 import { useState } from 'react';
 import './styles.scss';
+import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
+import { AttachFile } from '@mui/icons-material';
 
 const WriteBlog = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [image, setImage] = useState(null);
+  const _id = uuidv4()
+  const [formData, setFormData] = useState({
+    _id,
+    date_published: new Date(),
+    title: "",
+    category: "",
+    content: "",
+    author: "",
+    profile_image: "",
+    rating: 0,
+    blogImage: "",
+    likes: 0,
+    comments: 0,
+  })
+
   const [imagePreview, setImagePreview] = useState('');
+  const [message, setMessage] = useState('')
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    alert('Blog post submitted!');
+    axios.post('/api/blogs/add', formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    })
   };
+
+  const handleUpload = (file: string) => {
+    try {
+      const res = axios.post('/api/blogs/upload', { file })
+      setMessage("File uploaded Successfully")
+    } catch (error) {
+      setMessage('Error uploading file.');
+    }
+  }
 
   const handleImageChange = (e: any) => {
     const file = e.target.files[0];
     if (file) {
-      setImage(file);
-      const reader: any = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result);
-      };
-      reader.readAsDataURL(file);
+      handleUpload(file)
     }
   };
+
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
 
   return (
     <form onSubmit={handleSubmit} className="container">
@@ -36,28 +64,36 @@ const WriteBlog = () => {
         <input
           type="text"
           id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          name="title"
+          value={formData?.title}
+          onChange={handleChange}
           required
         />
       </div>
+      <div className="formGroup">
+        <label htmlFor="category">Cateory</label>
+        <input
+          type="text"
+          id="category"
+          value={formData?.category}
+          name="category"
+          onChange={handleChange}
+          required
+        />
+      </div>
+
       <div className="formGroup">
         <label htmlFor="content">Content</label>
         <textarea
           id="content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
+          value={formData?.content}
+          name="content"
+          onChange={handleChange}
           required
         />
       </div>
       <div className="formGroup">
-        <label htmlFor="image">Blog Banner Image</label>
-        <div className='formGroupImage'><input
-          type="file"
-          id="image"
-          accept="image/*"
-          onChange={handleImageChange}
-        /></div>
+        <AttachFile className='cursor-pointer text-white' />
         {imagePreview && (
           <div className="imagePreview">
             {imagePreview}
@@ -66,7 +102,7 @@ const WriteBlog = () => {
         )}
       </div>
       <button type="submit">Submit</button>
-    </form>
+    </form >
   );
 };
 

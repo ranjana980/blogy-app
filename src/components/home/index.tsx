@@ -1,11 +1,22 @@
 
-import React from 'react';
-import { blogs } from '../../utils/constants/blogs'
+'use client'
+import React, { useEffect, useState } from 'react';
 import BlogCard from '@/common-components/blog-card';
 import './styles.scss'
 import bannerImage from './../../assets/images/blog-home-banner.png'
+import axios from 'axios';
 
 const Home = () => {
+    const [blogs, setBlogs]: any = useState([])
+
+    const getBlogs = async () => {
+        const result = await axios.get('/api/blogs')
+        setBlogs(result.data)
+    }
+
+    useEffect(() => {
+        getBlogs()
+    }, [])
 
     return (
         <div className='home mb-10'>
@@ -15,17 +26,12 @@ const Home = () => {
                     <span>Embark on a journey of discovery with our in-depth articles, expert interviews, and real-life experiences on Blogy.</span>
                 </div>
                 <div className='top-container'>
-                    <div className='grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4  '>
-                        {blogs.slice(0, 3).map(({ date, author, category, blogImage = "blogImage", name, profile_image }: any) => (
-                            <React.Fragment key={name} >
+                    <div className='grid  grid-cols-12 gap-4  '>
+                        {blogs?.slice(0, 3).map((item: any) => (
+                            <React.Fragment key={item.title} >
                                 <BlogCard
-                                    author={author}
-                                    blogName={name}
-                                    date={date}
-                                    category={category}
-                                    blogImage={blogImage}
-                                    authorImage={profile_image}
-                                    className='p-4 md:p-6 lg:p-8 xl:p-10'
+                                    {...item}
+                                    className='p-4 md:p-6 lg:p-8 xl:p-10 col-span-3'
                                 />
                             </React.Fragment>
                         ))}
@@ -33,18 +39,12 @@ const Home = () => {
                 </div>
             </div>
             <div className='center-container'>
-                <div className='blog-container'>
-                    {blogs.slice(3, 11).map(({ date, author, category, blogImage = "blogImage", name, profile_image, description }: any) => (
-                        <div key={name} >
+                <div className='blog-container grid grid-cols-12 gap-5 flex'>
+                    {blogs?.slice(3, 11).map((item: any) => (
+                        <div key={item.title} className='lg:col-span-3 md:col-span-6 col-span-12 md:my-0 mx-3'>
                             <BlogCard
-                                author={author}
-                                blogName={name}
-                                date={date}
-                                category={category}
-                                blogImage={blogImage}
-                                authorImage={profile_image}
+                                {...item}
                                 isContent
-                                description={description}
                             />
                         </div>
                     ))}

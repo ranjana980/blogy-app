@@ -1,7 +1,9 @@
-import AboutUs from '@/components/about-us'
-import React from 'react'
 
-export default function About() {
-    return <AboutUs />
+
+import React from 'react'
+import BlogList from "@/components/blog-list"
+
+export default function Blogs() {
+    return <BlogList />
 
 }
