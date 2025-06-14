@@ -24,7 +24,7 @@ export default function BlogDetails() {
             </div>
             <div className='flex flex-col mt-5 gap-5 mr-5'>
                 <h1 className='text-[black]'>Related Blogs</h1>
-                {relatedBlogs.slice(1, relatedBlogs.length)?.map((blogItem) => (
+                {relatedBlogs?.slice(1, relatedBlogs.length)?.map((blogItem) => (
                     <React.Fragment key={item.title}>
                         <BlogCard isHorizontal {...blogItem} isPorfile isContent />
                     </React.Fragment>

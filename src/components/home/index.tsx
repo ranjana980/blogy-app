@@ -11,7 +11,7 @@ const Home = () => {
 
     const getBlogs = async () => {
         const result = await axios.get('/api/blogs')
-        setBlogs(result.data)
+        setBlogs(result.data.data)
     }
 
     useEffect(() => {
