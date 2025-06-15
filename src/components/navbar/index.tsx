@@ -4,16 +4,17 @@
 import React, { useState } from 'react'
 import { navItems } from './../../utils/constants/navbar'
 import './styles.scss'
-import { Menu, Close, EditOutlined } from '@mui/icons-material';
+import { Menu, Close, EditOutlined, Notifications } from '@mui/icons-material';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import users from './../../utils/constants/users.json'
 
 export default function Navbar() {
+    const loggedInUser = users.find((item) => item.is_logged_in)
     const pathname = usePathname()
     const [openMenu, setOpenMenu] = useState(false)
-    const isLoggedIn = true
-    const darkBgPath = ['/user/write-blog', '/user/dashboard']
-    const isDark = darkBgPath.includes(pathname)
+    const isLoggedIn = loggedInUser?.is_logged_in
+    const isDark = pathname.includes('/user')
 
     const toggleMenu = () => {
         setOpenMenu(!openMenu)
@@ -29,14 +30,21 @@ export default function Navbar() {
                             <a href={url}>{label}</a>
                         </li>
                     ))}
+
                 </ul>
                 <div className='flex gap-[10px]'>
-                    {isLoggedIn ? <div className='flex gap-[12px] justify-content-center align-items-center'>
-                        <Link href="/user/write-blog" className='border p-[5px] h-[25px] w-[25px] flex cursor-pointer' ><EditOutlined className='text-[15px]' />
-                        </Link>
-                        <span>Write</span>
-                        <Link className='profile' style={{ background: isDark ? 'aliceblue' : '#214252', color: isDark ? '#214252' : 'aliceblue' }} href="/user/dashboard">RC</Link>
-                    </div> : <button className='nav-btn'>Login</button>}
+                    {isLoggedIn ?
+                        <>
+                            <div className='flex gap-[12px] justify-content-center align-items-center'>
+                                <Link href="/user/write-blog" className='border p-[5px] h-[25px] w-[25px] flex cursor-pointer' ><EditOutlined className='text-[15px]' />
+                                </Link>
+                                <span>Write</span>
+                                <Notifications />
+                                <Link className='profile' style={{ background: isDark ? 'aliceblue' : '#214252', color: isDark ? '#214252' : 'aliceblue' }} href="/user/dashboard">RC</Link>
+                            </div>
+
+                        </>
+                        : <button className='nav-btn'>Login</button>}
                     {!openMenu ? <Menu className='nav-menu' onClick={toggleMenu} /> : <Close className='nav-menu' onClick={toggleMenu} />}
                 </div>
             </div>

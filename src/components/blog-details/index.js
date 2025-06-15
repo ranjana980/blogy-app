@@ -17,15 +17,15 @@ export default function BlogDetails() {
 
     return (
         <div className='flex mx-12 ml-14 gap-10'>
-            <div className='   my-10 w-[80%] '>
+            <div className='my-10 w-[80%] '>
                 <h2 className='text-[#214252] mb-5 text-start'>{blog?.title}</h2>
                 <img src={blog?.blogImage} height={400} width={800} />
                 <article className=' mt-5'>{blog?.content}</article>
             </div>
-            <div className='flex flex-col mt-5 gap-5 mr-5'>
+            <div className='flex flex-col mt-5 gap-5 mr-5 mb-5'>
                 <h1 className='text-[black]'>Related Blogs</h1>
-                {relatedBlogs?.slice(1, relatedBlogs.length)?.map((blogItem) => (
-                    <React.Fragment key={item.title}>
+                {relatedBlogs?.slice(1, 6)?.map((blogItem) => (
+                    <React.Fragment key={blogItem?.title}>
                         <BlogCard isHorizontal {...blogItem} isPorfile isContent />
                     </React.Fragment>
                 ))}

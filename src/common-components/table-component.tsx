@@ -5,9 +5,14 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Comment, Delete, Edit, ThumbUp } from '@mui/icons-material';
+import { format } from 'date-fns';
 
-export default function TableComponent({ data }: any) {
+export default function TableComponent({ coulmns, data }: any) {
+
+    const formatDate = (date: any) => {
+        return format(new Date(date ?? "2025-06-09"), 'MMM d, yyyy');
+    };
+
     return (
         <TableContainer component={Paper} sx={{
             maxHeight: '510px',
@@ -23,23 +28,26 @@ export default function TableComponent({ data }: any) {
         }}>
             <Table aria-label="simple table">
                 <TableBody>
+                    <TableRow>
+                        <TableCell>S.no</TableCell>
+                        {coulmns?.map((item: any) => (
+                            <>
+                                <TableCell>{item.title}</TableCell></>
+                        ))}
+                    </TableRow>
                     {data.map((row: any, index: number) => (
                         <TableRow
-                            key={row.name}
+                            key={row}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                            <TableCell component="th" scope="row">
-                                {index + 1}
-                            </TableCell>
-                            <TableCell align='left'>
-                                <img
-                                    src="https://picsum.photos/70/70" height={100} width={100} style={{ borderRadius: '10px' }} />
-                            </TableCell>
-                            <TableCell align="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nam quas inventore, ut iu</TableCell>
-                            <TableCell align="left" ><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px' }}><ThumbUp sx={{ color: '#ff9800' }} /><b className='mt-2'>3.4k</b></div></TableCell>
-                            <TableCell align="left"><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px' }}><Comment sx={{ color: 'blue' }} /><b>3.4k</b></div></TableCell>
-                            <TableCell align="left"><div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}><Edit sx={{ cursor: 'pointer', color: 'green' }} /><Delete sx={{ cursor: 'pointer', color: 'red' }} /></div></TableCell>
-                        </TableRow>
+                            <TableCell>{index + 1}</TableCell>
+                            {coulmns.map((item: any, index1: number) => (
+                                <>
+                                    {item.type === "image" ? <TableCell key={row[index1]['title']} ><img style={{ height: '50px' }} src={row[index1][item?.accessor] ?? ""} height={50} width={50} /></TableCell>
+                                        : item.type === 'node' ? <TableCell key={row[index1]?.['title']}>{row[index1] ? row[index1][item.accessor] : ""}    </TableCell> : <TableCell key={row[index1]?.['title']}>{item.type === "date" ? formatDate(row[index1] ? row[index1]?.[item?.accessor] : "2025-06-12") : row[index1]?.[item?.accessor]}</TableCell>}
+                                </>
+                            ))}
+                        </TableRow >
                     ))}
                 </TableBody>
             </Table>

@@ -2,7 +2,7 @@
 import React from "react";
 import "./styles.scss";
 import Image from "next/image";
-import { Comment, Delete, ThumbUp } from '@mui/icons-material';
+import { Comment, ThumbUp } from '@mui/icons-material';
 import Link from "next/link";
 
 const BlogCard = ({
@@ -18,7 +18,6 @@ const BlogCard = ({
   likes,
   content,
   _id,
-  handleDelete,
   isHorizontal
 }: any) => {
 
@@ -73,7 +72,6 @@ const BlogCard = ({
           }
         </div>
       </Link>
-      <Delete onClick={handleDelete} />
     </div>
   );
 };

@@ -2,13 +2,8 @@
 import React from 'react'
 import blogs from "../../utils/constants/data.json"
 import BlogCard from '@/common-components/blog-card'
-import axios from 'axios'
 
 export default function BlogList() {
-
-    const handleDelete = (id) => {
-        axios.delete(`/api/blogs/delete/${id}`)
-    }
 
     return (
         <div className='center-container'>
@@ -17,7 +12,6 @@ export default function BlogList() {
                     <div className='col-span-3' key={item.title} >
                         <BlogCard
                             {...item}
-                            handleDelete={() => handleDelete(item?._id)}
                             isContent
                         />
                     </div>
